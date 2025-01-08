@@ -1,0 +1,13 @@
+FROM rocker/tidyverse:latest
+
+# Install HDF5 and Bioconductor dependencies
+RUN apt-get update && apt-get install -y libhdf5-dev
+RUN R -e "install.packages('rhdf5', dependencies=TRUE)"
+RUN R -e "BiocManager::install('Seurat')"
+
+# Copy scripts into the container
+WORKDIR /workflow
+COPY scripts/ /workflow/scripts
+
+# Set default command
+CMD ["R"]
