@@ -1,13 +1,38 @@
+# Use Rocker tidyverse as the base image
 FROM rocker/tidyverse:latest
 
-# Install HDF5 and Bioconductor dependencies
-RUN apt-get update && apt-get install -y libhdf5-dev
-RUN R -e "install.packages('rhdf5', dependencies=TRUE)"
-RUN R -e "BiocManager::install('Seurat')"
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive \
+    TZ=Etc/UTC
 
-# Copy scripts into the container
+# Install system-level dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libhdf5-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    libgit2-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install necessary R libraries
+RUN R -e "install.packages(c('Matrix', 'limma', 'devtools', 'Seurat', 'BiocManager'), repos = 'http://cran.r-project.org')"
+RUN R -e "BiocManager::install(c('rhdf5', 'clusterProfiler', 'org.Mm.eg.db', 'org.Hs.eg.db', 'AnnotationDbi', 'KEGGREST'))"
+
+# Set the working directory
 WORKDIR /workflow
-COPY scripts/ /workflow/scripts
 
-# Set default command
-CMD ["R"]
+# Copy scripts and data into the container
+COPY scripts/ /workflow/scripts
+COPY data/ /workflow/data
+
+# Set the default command to bash for flexibility
+CMD ["bash"]
+

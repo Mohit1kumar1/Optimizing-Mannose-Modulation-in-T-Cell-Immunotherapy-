@@ -1,0 +1,1 @@
+1. To install Nextflow, java is needed, for java, sdkman is needed, for sdkman, pacman is needed, for pacman MSYS2 is needed
