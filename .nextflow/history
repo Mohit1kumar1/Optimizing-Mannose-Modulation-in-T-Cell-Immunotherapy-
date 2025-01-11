@@ -6,3 +6,6 @@
 2025-01-11 15:23:26	-	nice_ekeblad	-	c78f0eae768233a79586023a46f7b9db	04ea6b5e-1a78-438f-bc7b-6f6f3f636638	nextflow run test.nf -with-docker -ansi-log false
 2025-01-11 15:55:59	-	compassionate_bohr	-	cc22fd3a56969a62ee8d2e336575839c	fb004908-3311-4731-8e34-35c5fa619e5b	nextflow run main.nf -with-docker
 2025-01-11 16:21:20	4.5s	infallible_franklin	OK	c78f0eae768233a79586023a46f7b9db	64898329-5b86-45a7-b776-06d414594766	nextflow run test.nf -with-docker
+2025-01-11 16:27:14	-	chaotic_monod	-	cc22fd3a56969a62ee8d2e336575839c	44d38d45-5c3e-4869-b65a-9ff4da1f80d5	nextflow run main.nf -with-docker
+2025-01-11 16:28:52	-	cheeky_meucci	-	cc22fd3a56969a62ee8d2e336575839c	4bb01ddc-4dcf-43de-bd8b-05d73d7ca48a	nextflow run main.nf -with-docker
+2025-01-11 16:30:23	5.2s	elated_galileo	ERR	ae1f2d357993e429ad4c926cf4ce8245	1a49ee18-da68-4b4a-8d53-7c0a31b8dc13	nextflow run main.nf -with-docker

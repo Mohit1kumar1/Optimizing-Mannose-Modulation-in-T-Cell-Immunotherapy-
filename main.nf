@@ -11,7 +11,7 @@ process ExtractHDF5 {
 
     script:
     """
-    Rscript scripts/extract_hdf5.R $hdf5_file extracted_data/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/extract_hdf5.R $hdf5_file extracted_data/
     """
 }
 
@@ -24,7 +24,7 @@ process QualityControl {
 
     script:
     """
-    Rscript scripts/quality_control.R $data_files qc_results/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/quality_control.R $data_files qc_results/
     """
 }
 
@@ -37,7 +37,7 @@ process NormalizeData {
 
     script:
     """
-    Rscript scripts/normalization.R $qc_files normalized_data/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/normalization.R $qc_files normalized_data/
     """
 }
 
@@ -50,7 +50,7 @@ process Clustering {
 
     script:
     """
-    Rscript scripts/clustering.R $normalized_files clustering_results/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/clustering.R $normalized_files clustering_results/
     """
 }
 
@@ -63,7 +63,7 @@ process DifferentialExpression {
 
     script:
     """
-    Rscript scripts/dge.R $normalized_files dge_results/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/dge.R $normalized_files dge_results/
     """
 }
 
@@ -76,7 +76,7 @@ process PathwayAnalysis {
 
     script:
     """
-    Rscript scripts/pathway_analysis.R $dge_files pathway_analysis_results/
+    Rscript C:/Users/mh319/Desktop/VS Code/Github Repo/T Cell Workflow/scripts/pathway_analysis.R $dge_files pathway_analysis_results/
     """
 }
 
@@ -89,6 +89,7 @@ workflow {
         ExtractHDF5 | 
         QualityControl | 
         NormalizeData |
-        (Clustering & DifferentialExpression) |
+        Clustering |
+        DifferentialExpression |
         PathwayAnalysis
 }
