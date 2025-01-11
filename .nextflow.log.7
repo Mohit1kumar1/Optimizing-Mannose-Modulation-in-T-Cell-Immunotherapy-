@@ -1,0 +1,46 @@
+Jan-11 14:39:16.833 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Jan-11 14:39:16.905 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.3
+Jan-11 14:39:17.096 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=C:\Users\mh319\.nextflow\plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+Jan-11 14:39:17.168 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jan-11 14:39:17.169 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jan-11 14:39:17.173 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Jan-11 14:39:17.191 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jan-11 14:39:17.225 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: C:\Users\mh319\Desktop\VS Code\Github Repo\T Cell Workflow\nextflow.config
+Jan-11 14:39:17.225 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: C:\Users\mh319\Desktop\VS Code\Github Repo\T Cell Workflow\nextflow.config
+Jan-11 14:39:17.261 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: C:\Users\mh319\.nextflow\secrets\store.json
+Jan-11 14:39:17.261 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@23cd4ff2] - activable => nextflow.secret.LocalSecretsProvider@23cd4ff2
+Jan-11 14:39:17.274 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-11 14:39:17.760 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Jan-11 14:39:17.795 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [agitated_watson] DSL2 - revision: ae8af1ca78
+Jan-11 14:39:17.797 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jan-11 14:39:17.797 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jan-11 14:39:17.879 [main] DEBUG nextflow.Session - Session UUID: 7afe69a0-e8ff-4882-88fd-8467b1c77cd2
+Jan-11 14:39:17.879 [main] DEBUG nextflow.Session - Run name: agitated_watson
+Jan-11 14:39:17.879 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jan-11 14:39:17.897 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jan-11 14:39:17.897 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=36; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jan-11 14:39:17.984 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.3 build 5933
+  Created: 16-12-2024 15:34 UTC (16:34 CEST)
+  System: Windows 11 10.0
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 17.0.10+7
+  Encoding: UTF-8 (Cp1252)
+  Process: 16284@DESKTOP-VJQC9BB [10.2.113.54]
+  CPUs: 12 - Mem: 15.7 GB (3.5 GB) - Swap: 18.8 GB (3 GB)
+Jan-11 14:39:18.000 [main] DEBUG nextflow.Session - Work-dir: C:\Users\mh319\Desktop\VS Code\Github Repo\T Cell Workflow\work [Windows 11]
+Jan-11 14:39:18.000 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: C:\Users\mh319\Desktop\VS Code\Github Repo\T Cell Workflow\bin
+Jan-11 14:39:18.016 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jan-11 14:39:18.041 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jan-11 14:39:18.073 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jan-11 14:39:18.078 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 13; maxThreads: 1000
+Jan-11 14:39:18.180 [main] DEBUG nextflow.Session - Session start
+Jan-11 14:39:18.180 [main] ERROR nextflow.cli.Launcher - Unknown signal: HUP
+java.lang.IllegalArgumentException: Unknown signal: HUP
+	at java.base/jdk.internal.misc.Signal.<init>(Signal.java:147)
+	at jdk.unsupported/sun.misc.Signal.<init>(Signal.java:139)
+	at nextflow.Session.registerSignalHandlers(Session.groovy:502)
+	at nextflow.Session.start(Session.groovy:558)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:132)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:376)
+	at nextflow.cli.Launcher.run(Launcher.groovy:503)
+	at nextflow.cli.Launcher.main(Launcher.groovy:658)

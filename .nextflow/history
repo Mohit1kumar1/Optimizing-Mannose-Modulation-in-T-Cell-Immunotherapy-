@@ -1,0 +1,8 @@
+2025-01-11 14:39:17	-	agitated_watson	-	ae8af1ca7898b4474cbf0591ade50de4	7afe69a0-e8ff-4882-88fd-8467b1c77cd2	nextflow run main.nf
+2025-01-11 14:57:22	-	reverent_brenner	-	cc22fd3a56969a62ee8d2e336575839c	48e3b1e3-4ef6-41b7-831a-5e18ae2a2b1a	nextflow run main.nf -with-docker
+2025-01-11 15:01:59	-	tiny_albattani	-	cc22fd3a56969a62ee8d2e336575839c	29971624-0e9a-4720-b6dc-98113a7d2da7	nextflow run main.nf -with-docker
+2025-01-11 15:10:35	-	friendly_cori	-	cc22fd3a56969a62ee8d2e336575839c	6967b3df-7823-4b4a-8073-5fea00c4a58d	nextflow run main.nf -with-docker
+2025-01-11 15:19:14	-	trusting_agnesi	-	c78f0eae768233a79586023a46f7b9db	4f961d24-308b-4e52-b398-e53338edbf06	nextflow run test.nf -with-docker
+2025-01-11 15:23:26	-	nice_ekeblad	-	c78f0eae768233a79586023a46f7b9db	04ea6b5e-1a78-438f-bc7b-6f6f3f636638	nextflow run test.nf -with-docker -ansi-log false
+2025-01-11 15:55:59	-	compassionate_bohr	-	cc22fd3a56969a62ee8d2e336575839c	fb004908-3311-4731-8e34-35c5fa619e5b	nextflow run main.nf -with-docker
+2025-01-11 16:21:20	4.5s	infallible_franklin	OK	c78f0eae768233a79586023a46f7b9db	64898329-5b86-45a7-b776-06d414594766	nextflow run test.nf -with-docker

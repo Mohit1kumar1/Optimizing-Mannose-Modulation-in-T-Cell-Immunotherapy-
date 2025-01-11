@@ -41,12 +41,54 @@ process NormalizeData {
     """
 }
 
-// Add additional processes for clustering, DGE, and pathway analysis
+process Clustering {
+    input:
+    path normalized_files
+
+    output:
+    path "clustering_results/*.csv"
+
+    script:
+    """
+    Rscript scripts/clustering.R $normalized_files clustering_results/
+    """
+}
+
+process DifferentialExpression {
+    input:
+    path normalized_files
+
+    output:
+    path "dge_results/*.csv"
+
+    script:
+    """
+    Rscript scripts/dge.R $normalized_files dge_results/
+    """
+}
+
+process PathwayAnalysis {
+    input:
+    path dge_files
+
+    output:
+    path "pathway_analysis_results/*.csv"
+
+    script:
+    """
+    Rscript scripts/pathway_analysis.R $dge_files pathway_analysis_results/
+    """
+}
 
 workflow {
     Channel
         .fromPath("data/*.h5")
         .set { hdf5_files }
 
-    hdf5_files | ExtractHDF5 | QualityControl | NormalizeData
+    hdf5_files | 
+        ExtractHDF5 | 
+        QualityControl | 
+        NormalizeData |
+        (Clustering & DifferentialExpression) |
+        PathwayAnalysis
 }
